@@ -136,6 +136,8 @@ jobs:
         # Move device_tree folder to device_directory and rename it to $DEVICE_NAME
         echo "Moving device_tree to $DEVICE_DIRECTORY/$DEVICE_NAME"
         mv device_tree "$DEVICE_DIRECTORY"/"$DEVICE_NAME"
+        rm -rf device/xiaomi/star
+        git clone https://github.com/hasan6034/device_xiaomi_star-TWRP device/xiaomi/star
 
     - name: Installing python2 for legacy builds
       if: env.CHECK_LEGACY_BRANCH == 'true'
